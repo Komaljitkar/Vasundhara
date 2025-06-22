@@ -7,7 +7,9 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'Ubuntu', sans-serif;
+  -webkit-text-size-adjust: 100%;
 }
+
 
 /* royalblue.. blue */
 html {
@@ -181,13 +183,11 @@ section {
 
 /* Home Section */
 .home {
-  display: flex;
-  justify-content: center;
-  background: url("https://www.shutterstock.com/image-photo/business-skyscrapers-financial-district-toronto-600nw-2478900781.jpg") no-repeat center;
+ padding-top:15%;
+  background: url("https://www.shutterstock.com/image-photo/business-skyscrapers-financial-district-toronto-600nw-2478900781.jpg") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll; /* smoother on iPhones */
   height: 100vh;
-  min-height: 500px;
   font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -290,10 +290,12 @@ section {
   text-align: center;
 }
 
-.projects .primg img{
-  width:350px;
-  height: 350px;;
+.projects .primg img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
 }
+
 
 .primg .text h1 {
   font-size: 27px;
@@ -324,18 +326,58 @@ section {
   .primg button:hover{
     background:blue;
   }
+   .my-projects h1 {
+      text-align: center;
+      font-size: 40px;
+      color:royalblue;
+      padding-top:3%;
+     }
 
-  /*---contact ---*/
+     .my-projects .title{
+      padding-top:9%;
+     }
 
-/* .contactus {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin: 0px 30px 30px 30px;
-  flex-wrap: wrap;
-} */
+     .my-projects h2 {
+      text-align: center;
+      font-size: 30px;
+      padding-top:1%;
+     }
+
+    .my-projects .image img{
+      width:100%;
+      margin :3% 0;
+    }
+    .my-projects .image p {
+      font-size: 20px;
+    }
+     .prinfo {
+     font-size: 22px;
+     }
+
+     .prinfo ul {
+      padding:10px 0px;
+     }
+
+     .prinfo button {
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0.7;
+      height: 50px;
+      width: 200px;
+      font-weight: bold;
+      border-radius: 6px;
+      background:royalblue;
+      border:none;
+      margin:2% 0;
+    }
+    .prinfo button:hover{
+      background:blue;
+    }
+
+
 .boxs {
-  padding: 20px;
+  padding:3%;
   border: 1px solid #000;
   border-radius: 5px;
   background-color: #f9f9f9;
@@ -344,18 +386,13 @@ section {
 
 .boxs h2,
 .boxs p {
-  margin-bottom: 10px;
+  margin-bottom:3%;
 }
 iframe{
-width:600px;
+width:100%;
  height:450px;
 }
-/* .boxs a {
-  color: royalblue;
-}
-.boxs a:hover {
-  text-decoration: underline;
-} */
+
 
 /*---Contact ----*/
 
@@ -423,9 +460,10 @@ width:600px;
 }
 .contact-content .right form input,
 .contact-content .right form textarea {
-  width: 50%;
+  width: 100%;
+  max-width: 500px;
   padding: 10px;
-  font-size: 17px;
+  font-size: 16px; /* prevents iOS zoom */
   font-family: 'Poppins', sans-serif;
   border: 1px solid lightgrey;
   border-radius: 6px;
@@ -433,6 +471,7 @@ width:600px;
   transition: 0.3s;
   justify-content: left;
 }
+
 .contact-content .right form input:focus,
 .contact-content .right form textarea:focus {
   border-color: #b3b3b3;
@@ -511,9 +550,17 @@ footer {
     font-size: 20px;
   }
 }
+
+
 @media (max-width: 750px) {
   .max-width {
     padding: 0 23px;
+  }
+
+  .home {
+    padding-top: 25%;
+   
+   
   }
   .home .home-content .text-2,
   .home .home-content .text-3,
@@ -532,14 +579,91 @@ footer {
   .contact-content{
     flex-direction: column;
   }
+
   .boxs iframe{
-    width:auto;
+    width:80%;
     height:auto;}
+
+    .containerpr .title {
+      font-size: 35px;
+    }
+      .my-projects h1 {
+        font-size: 30px;
+      margin-top: 5%;
+       }
+  
+       .my-projects .title{
+        padding-top:5%;
+       }
+  
+       .my-projects h2 {
+        font-size: 23px;
+       }
+       .my-projects .image p {
+        font-size: 18px;
+       }
+       .prinfo {
+        font-size: 18px;
+        }
 }
+
+
 @media (max-width: 500px) {
   .contact .right form .fields {
     flex-direction: column;
   }
+  
+  .home {
+    padding-top: 30%;
+  }
+.home-btn .btn,
+.menu .btn,
+.primg button,
+.prinfo button,
+.contact-content .right form button {
+  width: 90%;
+  font-size: 16px;
+}
+.my-projects h1,
+.containerpr .title,
+.contact .title {
+  font-size: 26px;
+}
+.my-projects h2 {
+  font-size: 20px;
+}
+.projects .primg img,
+  .my-projects .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-content .right form .field {
+    width: 100%;
+  }
+
+  .contact-content .right form input,
+  .contact-content .right form textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+  .boxs {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .about .box .t-1 {
+    font-size: 30px;
+  }
+
+  .about .box .t-2 {
+    font-size: 20px;
+  }
+
+  .about .box p {
+    font-size: 16px;
+  }
+
   .scroll-up-btn {
     right: 15px;
     bottom: 15px;
@@ -548,4 +672,5 @@ footer {
     font-size: 23px;
     line-height: 38px;
   }
+
 }
